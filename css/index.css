@@ -1,59 +1,196 @@
+/* ============================================================
+   O CSS serve para ESTILIZAR os elementos do HTML.
+   Cada bloco aqui segue o padrão:
+   seletor { propriedade: valor; }
+   - Seletor: qual elemento HTML vai ser estilizado
+   - Propriedade: o que vai ser alterado (cor, tamanho, etc.)
+   - Valor: como vai ficar
+============================================================ */
+
+
+/* SELETOR * — o asterisco significa "aplique isso em TODOS os elementos da página"
+   Serve como um "reset", zerando espaços que o navegador adiciona por padrão */
 *{
     margin: 0;
+    /* margin: espaço EXTERNO ao redor do elemento (fora da borda)
+       valor 0: remove qualquer margem padrão que o navegador coloca */
+
     padding: 0;
+    /* padding: espaço INTERNO do elemento (entre o conteúdo e a borda)
+       valor 0: remove qualquer preenchimento padrão */
+
     box-sizing: border-box;
+    /* box-sizing: define como o navegador calcula o tamanho total de um elemento
+       border-box: faz com que padding e borda sejam incluídos dentro do width/height definidos
+       (sem isso, adicionar padding aumentaria o tamanho total do elemento) */
 }
 
+/* SELETOR .content — o ponto (.) indica que é uma CLASSE
+   Estiliza a <div class="content"> do HTML */
 .content{
     width:100%;
+    /* width: largura do elemento
+       100%: ocupa 100% da largura do elemento pai (neste caso, a tela inteira) */
+
     height: 100vh;
+    /* height: altura do elemento
+       100vh: vh = "viewport height" (altura da janela visível)
+       100vh = 100% da altura da tela, independente do tamanho do monitor */
+
     background: url(../img/pexels-mo-eid-1268975-9934462.jpg);
+    /* background: define o fundo do elemento
+       url(...): usa uma imagem como fundo
+       ../img/: o ../ sobe uma pasta (sai de css/ e volta para a raiz do projeto) */
+
     background-repeat: no-repeat;
+    /* background-repeat: controla se a imagem de fundo se repete
+       no-repeat: a imagem aparece apenas uma vez, sem repetição */
+
     float: left;
+    /* float: faz o elemento "flutuar" para um lado, saindo do fluxo normal da página
+       left: empurra o elemento para a esquerda
+       Aqui garante que o container ocupe o espaço corretamente */
 }
+
+/* SELETOR nav — sem ponto, estiliza a tag HTML <nav> diretamente */
 nav{
     width: 30%;
+    /* width: a barra de navegação ocupa 30% da largura total da tela */
+
     height: 40px;
+    /* height: altura fixa de 40 pixels para a barra */
+
     display: flex;
+    /* display: define como o elemento se comporta no layout
+       flex: ativa o "Flexbox", sistema que organiza os itens filhos lado a lado
+       facilita alinhar e distribuir elementos internos */
+
     margin-left: 35%;
+    /* margin-left: margem (espaço externo) do lado esquerdo
+       35%: empurra a barra 35% a partir da esquerda
+       35% (margem) + 30% (largura) = 65%, centralizando a barra visualmente */
+
     margin-top: 10px;
+    /* margin-top: espaço externo acima do elemento
+       10px: 10 pixels de distância do topo */
+
     border-radius: 20px;
+    /* border-radius: arredonda os cantos da borda do elemento
+       20px: quanto maior o valor, mais arredondado fica (aqui cria o formato de pílula) */
+
     background: rgba(0, 0, 255, 0.541);
+    /* background: cor de fundo usando o formato rgba
+       rgba(vermelho, verde, azul, opacidade)
+       0, 0, 255 = azul puro | 0.541 = ~54% de opacidade (semitransparente) */
+
     filter: blur(1.08px);
+    /* filter: aplica efeitos visuais sobre o elemento
+       blur(1.08px): aplica desfoque de 1.08 pixels, criando um leve efeito de vidro fosco */
 }
+
+/* SELETOR .content h1 — estiliza o <h1> que está DENTRO de .content */
 .content h1{
     width: 40%;
+    /* width: o título ocupa 40% da largura da tela */
+
     height: 80px;
+    /* height: altura reservada para o título — 80 pixels */
+
     display: block;
+    /* display: block faz o elemento ocupar toda a linha disponível
+       garante que o h1 fique em sua própria linha, sem elementos do lado */
+
     font-family: 'Times New Roman', Times, serif;
+    /* font-family: define a fonte do texto
+       O navegador tenta usar as fontes na ordem: Times New Roman → Times → qualquer fonte serif
+       "serif" são fontes com pequenos traços decorativos nas letras (ex: Times) */
+
     font-weight: bold;
+    /* font-weight: peso/espessura do texto
+       bold: negrito */
+
     margin-left: 10px;
+    /* margin-left: 10px de espaço externo à esquerda do título */
+
     margin-top: 68vh;
+    /* margin-top: empurra o título para baixo — 68% da altura da tela
+       Isso posiciona o título quase na parte inferior da página */
 }
+
+/* SELETOR .content p — estiliza o <p> que está DENTRO de .content */
 .content p{
     width: 40%;
+    /* width: o parágrafo ocupa 40% da largura da tela */
+
     height: 20px;
+    /* height: altura reservada para o parágrafo — 20 pixels */
+
     margin-top: 10px;
+    /* margin-top: 10px de espaço acima do parágrafo (separa do título h1) */
+
     margin-left: 10px;
+    /* margin-left: 10px de espaço à esquerda (alinhado com o título) */
+
     margin-bottom: 15px;
+    /* margin-bottom: 15px de espaço abaixo do parágrafo (separa dos botões) */
+
     font-weight: lighter;
+    /* font-weight: peso/espessura do texto
+       lighter: texto mais fino que o padrão, visual mais leve */
+
     font-family: 'Times New Roman', Times, serif;
+    /* font-family: mesma fonte do título, mantendo a consistência visual */
 }
+
+/* SELETOR .btn-preto — estiliza o <button class="btn-preto"> */
 .btn-preto{
     width: 156.8px;
+    /* width: largura fixa do botão em pixels */
+
     height: 40px;
+    /* height: altura fixa do botão — 40 pixels */
+
     margin-left: 10px;
+    /* margin-left: alinha o botão com o título e parágrafo (mesmo 10px) */
+
     margin-right: 5px;
+    /* margin-right: 5px de espaço entre este botão e o próximo (btn-branco) */
+
     border-radius: 30px;
+    /* border-radius: arredonda os cantos
+       30px: valor alto deixa o botão com formato oval/pílula */
+
     background-color: black;
+    /* background-color: cor de fundo sólida
+       black: preto */
+
     color: white;
+    /* color: cor do TEXTO dentro do elemento
+       white: branco (contrasta com o fundo preto) */
+
     border: none;
+    /* border: define a borda do elemento
+       none: remove a borda padrão que os botões têm */
+
     font-family: 'Times New Roman', Times, serif;
+    /* font-family: mesma fonte dos outros elementos da página */
 }
+
+/* SELETOR .btn-branco — estiliza o <button class="btn-branco"> */
 .btn-branco{
     width: 156.8px;
+    /* width: mesma largura do botão preto, para ficarem iguais */
+
     height: 40px;
+    /* height: mesma altura do botão preto */
+
     border: none;
+    /* border: remove a borda padrão do botão */
+
     border-radius: 30px;
+    /* border-radius: mesmo arredondamento do botão preto — formato pílula */
+
     background-color: antiquewhite;
+    /* background-color: cor de fundo
+       antiquewhite: um branco com tom levemente creme/bege */
 }
