@@ -1,20 +1,59 @@
 <!DOCTYPE html>
+<!-- DOCTYPE: avisa o navegador que este é um arquivo HTML5 (versão mais atual do HTML) -->
+
 <html lang="pt-br">
+<!-- <html>: tag raiz que envolve toda a página
+     lang="pt-br": informa o idioma da página (português do Brasil), importante para acessibilidade e buscadores -->
+
 <head>
+<!-- <head>: área de configurações da página. O que está aqui NÃO aparece visualmente na tela -->
+
     <meta charset="UTF-8">
+    <!-- <meta charset>: define a codificação de texto
+         UTF-8: padrão universal que suporta acentos, cedilha e emojis corretamente -->
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta viewport>: controla como a página aparece em dispositivos móveis
+         width=device-width: a largura da página se adapta à largura da tela do dispositivo
+         initial-scale=1.0: começa sem zoom aplicado -->
+
     <link rel="stylesheet" href="./css/index.css">
+    <!-- <link rel="stylesheet">: conecta um arquivo CSS externo à página
+         href="./css/index.css": caminho do arquivo CSS (./ significa "na pasta atual") -->
+
 </head>
+
 <body>
-    
+<!-- <body>: todo o conteúdo VISÍVEL da página fica aqui -->
+
     <div class="content">
-      
+    <!-- <div>: container genérico (caixa) usado para agrupar elementos
+         class="content": dá um nome a esta div para que o CSS consiga estilizá-la -->
+
         <nav></nav>
+        <!-- <nav>: tag semântica para menus de navegação
+             Está vazia aqui, mas o CSS já a estiliza como uma barra no topo da página -->
+
         <h1>Get Landing page in 2 weeks</h1>
+        <!-- <h1>: título principal da página (heading nível 1)
+             É o texto mais importante da hierarquia — deve haver apenas um por página -->
+
         <p>Qualqur coisa que não sei o que que não o que lá</p>
+        <!-- <p>: parágrafo de texto comum, usado para descrições e conteúdo textual -->
+
         <button class="btn-preto">Button 1</button>
+        <!-- <button>: elemento clicável (botão)
+             class="btn-preto": identifica este botão para o CSS aplicar o estilo escuro -->
+
         <button class="btn-branco">Button 2</button>
+        <!-- <button>: segundo botão da página
+             class="btn-branco": identifica este botão para o CSS aplicar o estilo claro -->
+
     </div>
+    <!-- Fecha o container .content -->
 
 </body>
+<!-- Fecha o corpo da página -->
+
 </html>
+<!-- Fecha o documento HTML -->
